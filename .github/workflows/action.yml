@@ -8,8 +8,11 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: read
+      issues: write
       pull-requests: write
+
     steps:
       - uses: actions/checkout@master
       - uses: chrnorm/deployment-action@releases/v1
