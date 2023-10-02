@@ -7,11 +7,7 @@ on:
 jobs:
   preview:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-      issues: write
-      pull-requests: write
+    permissions: write-all
 
     steps:
       - uses: actions/checkout@master
