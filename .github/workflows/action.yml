@@ -1,6 +1,6 @@
 name: Deploy for preview
 
-on: [pull_request]
+on: [pull_request_target, issues]
 
 jobs:
   preview:
