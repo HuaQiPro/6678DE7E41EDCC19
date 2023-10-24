@@ -280,13 +280,6 @@ let PlayEr = {
                 PlayEr.ad.Action();
             }
         }
-        console.log(
-            "\n" +
-            " %c 超级播放器® %c Q"+"Q6"+"02"+"5"+"24"+"9"+"50 " +
-            "\n",
-            "color: #fadfa3; background: #030307; padding:5px 0; font-size:18px;",
-            "background: #fadfa3; padding:5px 0; font-size:18px;"
-        );
     },
     "load" : function(){
         PlayEr.play();
@@ -1304,7 +1297,7 @@ let PlayEr = {
         "api2":function(){
             if(PlayEr.empty(ConFig["MesData"]['api']) || PlayEr.empty(ConFig["MesData"]['id'])){return;}
             PlayEr.danMu.apiBackend.api(ConFig["MesData"]['api']+'/dp?id='+ConFig["MesData"]['id'], '', '', function (e,t) {
-                if(t['copy'] !== '超级播放器苹果cms接口，作者QQ602524950' || t['code'] === '0'){return}
+                if(t['code'] === '0'){return}
                 //临时存储获取的选集信息
                 sessionStorage.setItem("list",JSON.stringify(t));
             }, function () {
@@ -1313,7 +1306,7 @@ let PlayEr = {
         },
         "api":function(){
             PlayEr.danMu.apiBackend.api(ConFig["MesData"]['api']+'/dp?id='+ConFig["MesData"]['id'], '', '', function (e,t) {
-                if(t['copy'] !== '超级播放器苹果cms接口，作者QQ602524950' || t['code'] === '0'){return}
+                if(t['code'] === '0'){return}
                 //临时存储获取的选集信息
                 sessionStorage.setItem("list",JSON.stringify(t));
                 //插入html
