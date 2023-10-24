@@ -217,6 +217,7 @@ let PlayEr = {
             playData["type"] = 'flv';
             playData["customType"]={
                 flv: function playFlv(video, url, art) {
+                    window.onload = function() {
                     if (flvjs.isSupported()) {
                         const flv = flvjs.createPlayer({ type: 'flv', url });
                         flv.attachMediaElement(video);
@@ -226,7 +227,7 @@ let PlayEr = {
                         art.once('destroy', () => flv.destroy());
                     } else {
                         art.notice.show = 'Unsupported playback format: flv';
-                    }
+                    }}
                 }
             }
         }else if(t === 'm3u8' || t === 'hls'){
@@ -234,6 +235,7 @@ let PlayEr = {
             playData["type"] = 'm3u8';
             playData["customType"]={
                 m3u8: function playM3u8(video, url, art) {
+                    window.onload = function() {
                     if (Hls.isSupported()) {
                         const hls = new Hls();
                         hls.loadSource(url);
@@ -245,7 +247,7 @@ let PlayEr = {
                         video.src = url;
                     } else {
                         art.notice.show = 'Unsupported playback format: m3u8';
-                    }
+                    }}
                 }
             }
         }
