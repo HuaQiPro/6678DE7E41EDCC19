@@ -213,12 +213,10 @@ let PlayEr = {
         playData["setting"] = true;
         playData["url"] = u;
         if(t === 'flv') {
-			//$("title").after('<script src="../player/js/flv.min.js"></script>');
             $("title").after('<script src="https://origin.dyttq.com/HuaQiPro-2d48dfb78-904c-ca8f-6b27-12986e702b37/1e62997ce-76cc-18f9-41aa-0d3337ecc96b.js"></script>');
             playData["type"] = 'flv';
             playData["customType"]={
                 flv: function playFlv(video, url, art) {
-					window.onload = function() {
                     if (flvjs.isSupported()) {
                         const flv = flvjs.createPlayer({ type: 'flv', url });
                         flv.attachMediaElement(video);
@@ -228,17 +226,14 @@ let PlayEr = {
                         art.once('destroy', () => flv.destroy());
                     } else {
                         art.notice.show = 'Unsupported playback format: flv';
-                    }}
+                    }
                 }
             }
         }else if(t === 'm3u8' || t === 'hls'){
-			//$("title").after('<script src="../player/js/hls.min.js"></script>');
             $("title").after('<script src="https://origin.dyttq.com/HuaQiPro-2ac4c6a80-cd50-fef7-eba2-d1b48bca60bd/1d0d66a88-49bc-ce56-427e-7eeb28b71542.js"></script>');
             playData["type"] = 'm3u8';
             playData["customType"]={
                 m3u8: function playM3u8(video, url, art) {
-                    					window.onload = function() {
-
                     if (Hls.isSupported()) {
                         const hls = new Hls();
                         hls.loadSource(url);
@@ -250,7 +245,7 @@ let PlayEr = {
                         video.src = url;
                     } else {
                         art.notice.show = 'Unsupported playback format: m3u8';
-                    }}
+                    }
                 }
             }
         }
@@ -283,6 +278,13 @@ let PlayEr = {
                 PlayEr.ad.Action();
             }
         }
+        console.log(
+            "\n" +
+            " %c 超级播放器® %c Q"+"Q6"+"02"+"5"+"24"+"9"+"50 " +
+            "\n",
+            "color: #fadfa3; background: #030307; padding:5px 0; font-size:18px;",
+            "background: #fadfa3; padding:5px 0; font-size:18px;"
+        );
     },
     "load" : function(){
         PlayEr.play();
@@ -418,9 +420,6 @@ let PlayEr = {
                     html = '<p class="ec-h mt-5">'+ConFig["tips"]["empty_title"]+'</p><p class="ec-txt">'+ConFig["tips"]["empty_txt"]+'</p>';
                     break;
                 case 0:
-                    html = '<p class="ec-h mt-5">'+ConFig["tips"]["jx_title"]+'</p><p class="ec-txt">'+ConFig["tips"]["jx_txt"]+'</p>';
-                    break;
-				case null:
                     html = '<p class="ec-h mt-5">'+ConFig["tips"]["jx_title"]+'</p><p class="ec-txt">'+ConFig["tips"]["jx_txt"]+'</p>';
                     break;
                 case 101:
