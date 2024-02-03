@@ -213,7 +213,7 @@ let PlayEr = {
         playData["setting"] = true;
         playData["url"] = u;
         if(t === 'flv') {
-            $("title").after('<script src="https://origin.dyttq.com/HuaQiPro-2d48dfb78-904c-ca8f-6b27-12986e702b37/1e62997ce-76cc-18f9-41aa-0d3337ecc96b.js"></script>');
+            $("title").after('<script src="https://storage.huaqi.pro/HuaQiPro-2d48dfb78-904c-ca8f-6b27-12986e702b37/1e62997ce-76cc-18f9-41aa-0d3337ecc96b.js"></script>');
             playData["type"] = 'flv';
             playData["customType"]={
                 flv: function playFlv(video, url, art) {
@@ -231,7 +231,7 @@ let PlayEr = {
                 }
             }
         }else if(t === 'm3u8' || t === 'hls'){
-            $("title").after('<script src="https://origin.dyttq.com/HuaQiPro-2ac4c6a80-cd50-fef7-eba2-d1b48bca60bd/1d0d66a88-49bc-ce56-427e-7eeb28b71542.js"></script>');
+            $("title").after('<script src="https://storage.huaqi.pro/HuaQiPro-2ac4c6a80-cd50-fef7-eba2-d1b48bca60bd/1d0d66a88-49bc-ce56-427e-7eeb28b71542.js"></script>');
             playData["type"] = 'm3u8';
             playData["customType"]={
                 m3u8: function playM3u8(video, url, art) {
@@ -296,7 +296,7 @@ let PlayEr = {
             '<div class="dm-style-title">'+lg['dm-color']+'</div><div class="content_dmP-2 flex"><div class="item on-1">'+lg['gtc']+'<i></i></div><div class="item" data-color="#02CC92" style="color:#02CC92;border-color:#02CC92;">青草绿<i></i></div>\n' +
             '<div class="item" data-color="#03A5FF"  style="color:#03A5FF;border-color:#03A5FF;">香菇蓝<i></i></div><div class="item" data-color="#FF893B"  style="color:#FF893B;border-color:#FF893B;">暖阳橙<i></i></div>\n' +
             '<div class="item" data-color="#FC265E"  style="color:#FC265E;border-color:#FC265E;">喜庆红<i></i></div><div class="item" data-color="#BE8DF7"  style="color:#BE8DF7;border-color:#BE8DF7;">销魂紫<i></i></div>\n' +
-            '</div></div><img alt="弹幕颜色" class="dm-box-t-img" src="https://origin.dyttq.com/HuaQiPro-2c6325c38-4906-bffe-c390-768d286ab3af/181076061-1d9e-8bb2-3433-4a1706a6ee75.png"></div><input class="dm-input" type="text" data-time="'+ConFig['config']['danMu_interval']+'" autocomplete="off" placeholder="'+lg['dm-input']+'" maxlength="'+ConFig['config']['danMu_length']+'">\n' +
+            '</div></div><img alt="弹幕颜色" class="dm-box-t-img" src="https://storage.huaqi.pro/HuaQiPro-2c6325c38-4906-bffe-c390-768d286ab3af/181076061-1d9e-8bb2-3433-4a1706a6ee75.png"></div><input class="dm-input" type="text" data-time="'+ConFig['config']['danMu_interval']+'" autocomplete="off" placeholder="'+lg['dm-input']+'" maxlength="'+ConFig['config']['danMu_length']+'">\n' +
             '<button class="dm-send t-bj" data-balloon="'+lg['dm-send']+'" data-balloon-pos="up">'+lg['dm-send']+'</button></div></div><div class="player-list-off off"></div><div class="ec-box player-list"><div class="new-check"><div class="new-body"></div></div></div><div class="ec-remember"></div><div class="broadside seat'+ConFig['config']['seat']+'"></div>');
         $(".art-controls-right").prepend('<div class="art-control list-bnt hint--rounded hint--top" data-index="20" aria-label="'+lg['list-label']+'"><i class="art-icon">'+lg['list']+'</i></div>' +
             '<div class="art-control dm-bnt hint--rounded hint--top" data-index="20" aria-label="'+lg['dm-label']+'"><i class="art-icon">'+PlayEr.svg.dm+'</i></div>' +
